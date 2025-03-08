@@ -1,10 +1,8 @@
+import { Title } from '@mui/icons-material'
+import Img from './assets/react-core-concepts.png'
 import { CORE_CONCEPTS } from './data'
 import CoreConcepts from './components/CoreConcept';
-import Header from './components/Header';
-
-
-
-
+import Header from './components/Header/Header';
 
 function App() {
   return (
