@@ -1,14 +1,16 @@
 import { Title } from '@mui/icons-material'
 import Img from './assets/react-core-concepts.png'
+import { CORE_CONCEPTS } from './data'
+
 
 const reactDescription = ['Core', 'Essential', 'Basic']
 const genRandomNum = (max)=> Math.floor(Math.random() *(max+1) )
 
 function CoreConcepts(props){
-  const {img, title, description}= props
+  const {image, title, description}= props
 return(
   <li>
-    <img src={img} alt={title} />
+    <img src={image} alt={title} />
     <h3>{title}</h3>
     <p>{description}</p>
   </li>
@@ -40,9 +42,9 @@ function App() {
       <main>
         <section id="core-concepts">
         <ul>
-          <CoreConcepts img={Img} title="first title" description="first description"/>
-          <CoreConcepts img={Img} title="second title" description="second description" />
-          <CoreConcepts img={Img} title="third title" description="third description" />
+          <CoreConcepts {...CORE_CONCEPTS[0]}/>
+          <CoreConcepts {...CORE_CONCEPTS[1]} />
+          <CoreConcepts {...CORE_CONCEPTS[2]} />
         </ul>
         </section>
         <h2>Time to get started!!</h2>
