@@ -3,7 +3,7 @@ import Img from './assets/react-core-concepts.png'
 import { CORE_CONCEPTS } from './data'
 import CoreConcepts from './components/CoreConcept';
 import Header from './components/Header/Header';
-
+import TabButton from './components/TabButton';
 function App() {
   return (
     <div>
@@ -16,8 +16,22 @@ function App() {
           <CoreConcepts {...CORE_CONCEPTS[2]} />
         </ul>
         </section>
+
+        <section id="examples">
+          <h2>examples</h2>
+          <menu>
+            <TabButton>Component1</TabButton>
+            <TabButton>Component2</TabButton>
+            <TabButton>Component3</TabButton>
+
+            <TabButton>Component4</TabButton>
+
+          </menu>
+
+        </section>
         <h2>Time to get started!!</h2>
       </main>
+
     </div>
   );
 }
