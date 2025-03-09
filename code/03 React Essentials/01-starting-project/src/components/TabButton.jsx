@@ -1,9 +1,9 @@
 import React from 'react'
 
-function TabButton({children}) {
+function TabButton({children, onSelect, setValue}) {
   return (
     <li>
-        <button>{children}</button>
+        <button onClick={()=>setValue(children)}>{children}</button>
     </li>
   )
 }

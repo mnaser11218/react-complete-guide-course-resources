@@ -4,7 +4,12 @@ import { CORE_CONCEPTS } from './data'
 import CoreConcepts from './components/CoreConcept';
 import Header from './components/Header/Header';
 import TabButton from './components/TabButton';
+import { useState } from 'react';
 function App() {
+  const handleSelect = ()=> {
+    
+  }
+  const [value, setValue] = useState("")
   return (
     <div>
      <Header/>
@@ -20,16 +25,16 @@ function App() {
         <section id="examples">
           <h2>examples</h2>
           <menu>
-            <TabButton>Component1</TabButton>
-            <TabButton>Component2</TabButton>
-            <TabButton>Component3</TabButton>
+            <TabButton onSelect={handleSelect} setValue={setValue}>Component1</TabButton>
+            <TabButton onSelect={handleSelect} setValue={setValue}>Component2</TabButton>
+            <TabButton onSelect={handleSelect} setValue={setValue}>Component3</TabButton>
 
-            <TabButton>Component4</TabButton>
+            <TabButton onSelect={handleSelect} setValue={setValue}>Component4</TabButton>
 
           </menu>
 
         </section>
-        <h2>Time to get started!!</h2>
+        <h2>{value}</h2>
       </main>
 
     </div>
