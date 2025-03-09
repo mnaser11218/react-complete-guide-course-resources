@@ -1,15 +1,17 @@
 import { Title } from '@mui/icons-material'
 import Img from './assets/react-core-concepts.png'
-import { CORE_CONCEPTS } from './data'
 import CoreConcepts from './components/CoreConcept';
 import Header from './components/Header/Header';
 import TabButton from './components/TabButton';
 import { useState } from 'react';
+import {CORE_CONCEPTS} from './data.js'
 function App() {
-  const handleSelect = (input)=> {
-    console.log(input)
-  }
   const [value, setValue] = useState("")
+
+  const handleSelect = (input)=> {
+  setValue(input) 
+  console.log(value)
+  }
   return (
     <div>
      <Header/>
@@ -25,17 +27,33 @@ function App() {
         <section id="examples">
           <h2>examples</h2>
           <menu>
-            <TabButton onSelect={()=>handleSelect('Component1')}>Component1</TabButton>
-            <TabButton onSelect={()=>handleSelect('Component2')} >Component2</TabButton>
-            <TabButton onSelect={()=>handleSelect('Component3')}>Component3</TabButton>
+            <TabButton onSelect={()=>handleSelect('Components')}>Components</TabButton>
+            <TabButton onSelect={()=>handleSelect('JSX')} >JSX</TabButton>
+            <TabButton onSelect={()=>handleSelect('Props')}>Props</TabButton>
 
-            <TabButton onSelect={()=>handleSelect('Component4')}>Component4</TabButton>
+            <TabButton onSelect={()=>handleSelect('State')}>State</TabButton>
 
           </menu>
+          {CORE_CONCEPTS.map((ele)=>{
+            if(ele.title == value){
+              return(
+                <div id="tab-content">
+                <h3>{ele.title}</h3>
+                <p>{ele.description}</p>
+                </div>
+              )
+            }
+           
+          })
+       
+}
 
         </section>
-        <h2>{value}</h2>
+       
+        {/* <h2>{value}</h2> */}
+       
       </main>
+     
 
     </div>
   );
