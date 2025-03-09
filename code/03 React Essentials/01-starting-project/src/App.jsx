@@ -6,8 +6,8 @@ import Header from './components/Header/Header';
 import TabButton from './components/TabButton';
 import { useState } from 'react';
 function App() {
-  const handleSelect = ()=> {
-    
+  const handleSelect = (input)=> {
+    console.log(input)
   }
   const [value, setValue] = useState("")
   return (
@@ -25,11 +25,11 @@ function App() {
         <section id="examples">
           <h2>examples</h2>
           <menu>
-            <TabButton onSelect={handleSelect} setValue={setValue}>Component1</TabButton>
-            <TabButton onSelect={handleSelect} setValue={setValue}>Component2</TabButton>
-            <TabButton onSelect={handleSelect} setValue={setValue}>Component3</TabButton>
+            <TabButton onSelect={()=>handleSelect('Component1')}>Component1</TabButton>
+            <TabButton onSelect={()=>handleSelect('Component2')} >Component2</TabButton>
+            <TabButton onSelect={()=>handleSelect('Component3')}>Component3</TabButton>
 
-            <TabButton onSelect={handleSelect} setValue={setValue}>Component4</TabButton>
+            <TabButton onSelect={()=>handleSelect('Component4')}>Component4</TabButton>
 
           </menu>
 
