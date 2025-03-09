@@ -5,6 +5,7 @@ import CoreConcepts from './components/CoreConcept';
 import Header from './components/Header/Header';
 import TabButton from './components/TabButton';
 function App() {
+  const handleSelect = ()=> console.log("clicked select")
   return (
     <div>
      <Header/>
@@ -20,11 +21,11 @@ function App() {
         <section id="examples">
           <h2>examples</h2>
           <menu>
-            <TabButton>Component1</TabButton>
-            <TabButton>Component2</TabButton>
-            <TabButton>Component3</TabButton>
+            <TabButton onSelect={handleSelect}>Component1</TabButton>
+            <TabButton onSelect={handleSelect}>Component2</TabButton>
+            <TabButton onSelect={handleSelect}>Component3</TabButton>
 
-            <TabButton>Component4</TabButton>
+            <TabButton onSelect={handleSelect}>Component4</TabButton>
 
           </menu>
 
