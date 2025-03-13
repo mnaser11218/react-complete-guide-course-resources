@@ -43,11 +43,11 @@ function App() {
         <section id="examples">
           <h2>examples</h2>
           <menu>
-            <TabButton onSelect={()=>handleSelect('Components')}>Components</TabButton>
-            <TabButton onSelect={()=>handleSelect('JSX')} >JSX</TabButton>
-            <TabButton onSelect={()=>handleSelect('Props')}>Props</TabButton>
+            <TabButton isSelected={value === 'Components'} onSelect={()=>handleSelect('Components')}>Components</TabButton>
+            <TabButton isSelected={value === 'JSX'} onSelect={()=>handleSelect('JSX')} >JSX</TabButton>
+            <TabButton isSelected={value === 'Props'} onSelect={()=>handleSelect('Props')}>Props</TabButton>
 
-            <TabButton onSelect={()=>handleSelect('State')}>State</TabButton>
+            <TabButton isSelected={value === 'State'} onSelect={()=>handleSelect('State')}>State</TabButton>
 
           </menu>
           {renderedValue}
