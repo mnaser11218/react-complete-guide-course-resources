@@ -54,7 +54,7 @@ function App() {
 
         </section>
        
-        {/* <h2>{value}</h2> */}
+      
        
       </main>
      
