@@ -1,3 +1,8 @@
+import TabButton from './TabButton.jsx';
+import { useState } from 'react';
+import { CORE_CONCEPTS } from '../data.js';
+
+
 export default function Examples(){
 const [value, setValue] = useState()
 let renderedValue = <p>Please select value</p>
