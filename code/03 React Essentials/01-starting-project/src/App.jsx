@@ -1,6 +1,6 @@
 import { Title } from '@mui/icons-material'
 import Img from './assets/react-core-concepts.png'
-import CoreConcepts from './components/CoreConcept';
+import CoreConcepts from './components/CoreConcepts.jsx';
 import Header from './components/Header/Header';
 import TabButton from './components/TabButton';
 import { useState } from 'react';
@@ -32,13 +32,8 @@ function App() {
     <div>
      <Header/>
       <main>
-        <section id="core-concepts">
-        <ul>
-          {CORE_CONCEPTS.map((concept)=> <CoreConcepts  key={concept.title} {...concept}/>)
-        }
-      
-        </ul>
-        </section>
+       
+        <CoreConcepts/>
 
         <section id="examples">
           <h2>examples</h2>
@@ -54,7 +49,7 @@ function App() {
 
         </section>
        
-      
+    
        
       </main>
      
