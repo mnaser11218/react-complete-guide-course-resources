@@ -6,6 +6,8 @@ import Section from './Section.jsx';
 
 export default function Examples(){
 const [value, setValue] = useState()
+const handleSelect = (input)=> setValue(input) 
+
 let renderedValue = <p>Please select value</p>
 if (value) {
       renderedValue =  CORE_CONCEPTS.map((ele)=>{
@@ -21,18 +23,15 @@ if (value) {
       })
     }
   
-const handleSelect = (input)=> {
-setValue(input) 
-console.log(value)
-}
+
     return (
         <Section title="examples" id="examples">
         <menu>
-          <TabButton isSelected={value === 'Components'} onSelect={()=>handleSelect('Components')}>Components</TabButton>
-          <TabButton isSelected={value === 'JSX'} onSelect={()=>handleSelect('JSX')} >JSX</TabButton>
-          <TabButton isSelected={value === 'Props'} onSelect={()=>handleSelect('Props')}>Props</TabButton>
+          <TabButton isSelected={value === 'Components'} onClick={()=>handleSelect('Components')}>Components</TabButton>
+          <TabButton isSelected={value === 'JSX'} onClick={()=>handleSelect('JSX')} >JSX</TabButton>
+          <TabButton isSelected={value === 'Props'} onClick={()=>handleSelect('Props')}>Props</TabButton>
 
-          <TabButton isSelected={value === 'State'} onSelect={()=>handleSelect('State')}>State</TabButton>
+          <TabButton isSelected={value === 'State'} onClick={()=>handleSelect('State')}>State</TabButton>
 
         </menu>
         {renderedValue}
