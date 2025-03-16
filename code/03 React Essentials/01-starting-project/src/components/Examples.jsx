@@ -1,6 +1,7 @@
 import TabButton from './TabButton.jsx';
 import { useState } from 'react';
 import { CORE_CONCEPTS } from '../data.js';
+import Section from './Section.jsx';
 
 
 export default function Examples(){
@@ -25,8 +26,7 @@ setValue(input)
 console.log(value)
 }
     return (
-        <section id="examples">
-        <h2>examples</h2>
+        <Section title="examples" id="examples">
         <menu>
           <TabButton isSelected={value === 'Components'} onSelect={()=>handleSelect('Components')}>Components</TabButton>
           <TabButton isSelected={value === 'JSX'} onSelect={()=>handleSelect('JSX')} >JSX</TabButton>
@@ -37,6 +37,6 @@ console.log(value)
         </menu>
         {renderedValue}
 
-      </section>
+      </Section>
     )
 }
