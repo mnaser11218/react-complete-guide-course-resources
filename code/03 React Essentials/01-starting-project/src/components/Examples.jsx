@@ -8,7 +8,12 @@ import Tabs from './Tabs.jsx';
 export default function Examples(){
 const [value, setValue] = useState()
 const handleSelect = (input)=> setValue(input) 
-
+const buttonsElements = <>
+<TabButton isSelected={value === 'Components'} onClick={()=>handleSelect('Components')}>Components</TabButton>
+<TabButton isSelected={value === 'JSX'} onClick={()=>handleSelect('JSX')} >JSX</TabButton>
+<TabButton isSelected={value === 'Props'} onClick={()=>handleSelect('Props')}>Props</TabButton>
+<TabButton isSelected={value === 'State'} onClick={()=>handleSelect('State')}>State</TabButton>
+</>
 let renderedValue = <p>Please select value</p>
 if (value) {
       renderedValue =  CORE_CONCEPTS.map((ele)=>{
@@ -23,21 +28,11 @@ if (value) {
        
       })
     }
-  
-
     return (
         <Section title="examples" id="examples">
-            <Tabs buttons={<>
-                <TabButton isSelected={value === 'Components'} onClick={()=>handleSelect('Components')}>Components</TabButton>
-          <TabButton isSelected={value === 'JSX'} onClick={()=>handleSelect('JSX')} >JSX</TabButton>
-          <TabButton isSelected={value === 'Props'} onClick={()=>handleSelect('Props')}>Props</TabButton>
-          <TabButton isSelected={value === 'State'} onClick={()=>handleSelect('State')}>State</TabButton>
-                </>}>
+            <Tabs buttons={buttonsElements} ButtonWrapper="menu">
                 {renderedValue}
             </Tabs>
-       
-      
-
       </Section>
     )
 }
