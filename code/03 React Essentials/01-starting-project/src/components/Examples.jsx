@@ -30,7 +30,7 @@ if (value) {
     }
     return (
         <Section title="examples" id="examples">
-            <Tabs buttons={buttonsElements} ButtonWrapper="menu">
+            <Tabs buttons={buttonsElements}>
                 {renderedValue}
             </Tabs>
       </Section>
