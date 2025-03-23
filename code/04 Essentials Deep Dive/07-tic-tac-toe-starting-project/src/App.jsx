@@ -6,7 +6,10 @@ function App() {
     <main>
       <div id="game-container">
         <ol>
-          <li></li>
+          <li>
+            <span className="player-name">player one</span>
+            <span className="player-symbol">X</span>
+          </li>
           <li></li>
         </ol>
       </div>
