@@ -1,9 +1,9 @@
-export default function Player({playerName, playerSymbol}){
+export default function Player({name, symbol}){
     return (
         <li>
         <span className="player">
-        <span className="player-name">{playerName}</span>
-        <span className="player-symbol">{playerSymbol}</span>
+        <span className="player-name">{name}</span>
+        <span className="player-symbol">{symbol}</span>
         </span>
         <button>Edit</button>
       </li> 
