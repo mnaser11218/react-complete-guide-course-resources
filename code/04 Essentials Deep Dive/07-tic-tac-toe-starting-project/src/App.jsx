@@ -3,7 +3,15 @@ function App() {
   
 
   return (
-    <h1>React Tic-Tac-Toe</h1>
+    <main>
+      <div id="game-container">
+        <ol>
+          <li></li>
+          <li></li>
+        </ol>
+      </div>
+
+    </main>
   )
 }
 
