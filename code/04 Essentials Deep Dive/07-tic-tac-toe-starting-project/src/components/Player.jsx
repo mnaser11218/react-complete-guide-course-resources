@@ -10,6 +10,7 @@ export default function Player({initialName, symbol}){
         btnCaption = 'Save'
     }
     return (
+       
         <li>
         <span className="player">
         <span className="player-name">{playerName}</span>
