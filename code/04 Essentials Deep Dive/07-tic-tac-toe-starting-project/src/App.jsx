@@ -10,10 +10,11 @@ function App() {
           <Player initialName="player two" symbol="O"  />
         </ol>
         GAME BOARD
+        <Gameboard />
       </div>
-      <div>
-            <Gameboard />
-        </div>
+    
+           
+       
     </main>
   )
 }
