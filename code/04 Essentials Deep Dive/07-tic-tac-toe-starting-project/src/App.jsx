@@ -1,16 +1,19 @@
 import Gameboard from "./components/Gameboard"
 import Player from "./components/Player"
+import { useState } from "react"
 
 function App() {
+  const [symb, setSymb] = useState('X')
+  const handleBoxClick = ()=>setSymb((prevSymb)=>prevSymb === 'X' ? 'O' : 'X')
   return (
     <main>
       <div id="game-container">
         <ol id="players">
           <Player initialName="player one" symbol="X" />
-          <Player initialName="player two" symbol="O"  />
+          <Player initialName="player two" symbol="O" />
         </ol>
         GAME BOARD
-        <Gameboard />
+        <Gameboard symbol={symb} updateSym={handleBoxClick} />
       </div>
     
            

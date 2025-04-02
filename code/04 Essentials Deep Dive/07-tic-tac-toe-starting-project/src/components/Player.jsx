@@ -10,7 +10,7 @@ export default function Player({initialName, symbol}){
         btnCaption = 'Save'
     }
     return (
-       
+        <>
         <li>
         <span className="player">
         <span className="player-name">{playerName}</span>
@@ -18,5 +18,7 @@ export default function Player({initialName, symbol}){
         </span>
         <button onClick={()=> setIsEditing((editing)=> !editing)}>{btnCaption}</button>
       </li> 
+    
+      </>
     )
 }
