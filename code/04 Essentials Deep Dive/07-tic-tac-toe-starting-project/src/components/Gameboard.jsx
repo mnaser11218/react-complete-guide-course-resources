@@ -1,21 +1,25 @@
 import React from 'react'
 
 let board = [
-    ['k', 'kd', 'kg'],
-    ['la', 'lo', 'lk'],
-    ['bs', 'bg', 'bh']
+    [null, null, null],
+    [null, null, null],
+    [null, null, null]
 ]
 function Gameboard() {
   return (
-    <ol>
+    <ol id="game-board">
 
-        {board.map((row, rowIndex)=>{
-            <li key={rowIndex}>
-                {row.map((column, columnIndex)=>{
-                    <button key={columnIndex} style={{color:"red"}}>{column}</button>
-                })}
+        {board.map((row, rowIndex)=>(
+             <li key={rowIndex}>
+                <ol>
+                {row.map((column, columnIndex)=>(
+                    <li key={columnIndex}>
+                    <button  >{column}</button>
+                    </li>
+                ))}
+                </ol>
             </li>
-        })}
+        ))}
     </ol>
   )
 }
