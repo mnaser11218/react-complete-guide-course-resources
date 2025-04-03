@@ -8,9 +8,9 @@ function App() {
   return (
     <main>
       <div id="game-container">
-        <ol id="players">
-          <Player initialName="player one" symbol="X" />
-          <Player initialName="player two" symbol="O" />
+        <ol id="players" className="highlight-player">
+          <Player initialName="player one" symbol="X" isActive={symb==='X'}/>
+          <Player initialName="player two" symbol="O" isActive={symb==='O'} />
         </ol>
         GAME BOARD
         <Gameboard symbol={symb} updateSym={handleBoxClick} />
