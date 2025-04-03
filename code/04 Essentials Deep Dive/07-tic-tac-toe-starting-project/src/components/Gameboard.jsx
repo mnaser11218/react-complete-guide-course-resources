@@ -12,13 +12,7 @@ function Gameboard({turns, onSelectSquare}) {
         const {row, col}=square;
         gameBoard[row][col]=player;
     }
-//     const [board, setBoard] = useState(initialBoard)
-// const handleBoardClick = (rowIndex, columnIndex) => {
-//     const updatedBoard = [...board]
-//     updatedBoard[rowIndex][columnIndex] =symbol
-//     setBoard(updatedBoard)
-//     updateSym()
-// }  
+
 return (
     <ol id="game-board">
 
@@ -27,7 +21,7 @@ return (
                 <ol>
                 {row.map((column, columnIndex)=>(
                     <li key={columnIndex}>
-                    <button onClick={()=> onSelectSquare(rowIndex, columnIndex)} >{column}</button>
+                    <button onClick={()=> onSelectSquare(rowIndex, columnIndex)} disabled={column} >{column}</button>
                     </li>
                 ))}
                 </ol>
