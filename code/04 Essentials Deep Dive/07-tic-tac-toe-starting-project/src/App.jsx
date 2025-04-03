@@ -3,8 +3,20 @@ import Player from "./components/Player"
 import { useState } from "react"
 
 function App() {
+  const [gameTurns, setGameTurns] = useState([])
   const [symb, setSymb] = useState('X')
-  const handleBoxClick = ()=>setSymb((prevSymb)=>prevSymb === 'X' ? 'O' : 'X')
+  const handleSelectSquare = (rowIndex, colIndex)=>{
+    setSymb((prevSymb)=>prevSymb === 'X' ? 'O' : 'X')
+    setGameTurns((prevTurns)=>{
+      let currentPlayer = 'X'
+      if(prevTurns.length > 0 && prevTurns[0].player=== 'X'){
+        currentPlayer= 'O'
+      }
+      const updatedTurns = [
+        {square: {row: rowIndex, col: colIndex}, player: currentPlayer}, ...prevTurns,
+      ]
+    })
+  }
   return (
     <main>
       <div id="game-container">
@@ -13,7 +25,7 @@ function App() {
           <Player initialName="player two" symbol="O" isActive={symb==='O'} />
         </ol>
         GAME BOARD
-        <Gameboard symbol={symb} updateSym={handleBoxClick} />
+        <Gameboard symbol={symb} updateSym={handleSelectSquare} />
       </div>
     
            
