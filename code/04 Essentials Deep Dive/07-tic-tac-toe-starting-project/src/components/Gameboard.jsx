@@ -5,14 +5,14 @@ let initialBoard = [
     [null, null, null],
     [null, null, null]
 ]
-function Gameboard({symbol, updateSym}) {
-    const [board, setBoard] = useState(initialBoard)
-const handleBoardClick = (rowIndex, columnIndex) => {
-    const updatedBoard = [...board]
-    updatedBoard[rowIndex][columnIndex] =symbol
-    setBoard(updatedBoard)
-    updateSym()
-}  
+function Gameboard({symbol, onSelectSquare}) {
+//     const [board, setBoard] = useState(initialBoard)
+// const handleBoardClick = (rowIndex, columnIndex) => {
+//     const updatedBoard = [...board]
+//     updatedBoard[rowIndex][columnIndex] =symbol
+//     setBoard(updatedBoard)
+//     updateSym()
+// }  
 return (
     <ol id="game-board">
 
@@ -21,7 +21,7 @@ return (
                 <ol>
                 {row.map((column, columnIndex)=>(
                     <li key={columnIndex}>
-                    <button onClick={()=>handleBoardClick(rowIndex, columnIndex)} >{column}</button>
+                    <button onClick={onSelectSquare} >{column}</button>
                     </li>
                 ))}
                 </ol>
