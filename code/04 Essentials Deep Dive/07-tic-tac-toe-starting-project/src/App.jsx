@@ -15,6 +15,7 @@ function App() {
       const updatedTurns = [
         {square: {row: rowIndex, col: colIndex}, player: currentPlayer}, ...prevTurns,
       ]
+      return updatedTurns;
     })
   }
   return (
@@ -25,7 +26,7 @@ function App() {
           <Player initialName="player two" symbol="O" isActive={symb==='O'} />
         </ol>
         GAME BOARD
-        <Gameboard symbol={symb} updateSym={handleSelectSquare} />
+        <Gameboard turns={gameTurns} onSelectSquare={handleSelectSquare} />
       </div>
     
            
