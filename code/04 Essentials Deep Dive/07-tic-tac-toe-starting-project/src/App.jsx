@@ -1,4 +1,5 @@
 import Gameboard from "./components/Gameboard"
+import Log from "./components/Log"
 import Player from "./components/Player"
 import { useState } from "react"
 
@@ -27,6 +28,8 @@ function App() {
         </ol>
         GAME BOARD
         <Gameboard turns={gameTurns} onSelectSquare={handleSelectSquare} />
+        Logs:
+        <Log turns={gameTurns}/>
       </div>
     
            
