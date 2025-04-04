@@ -4,8 +4,9 @@ function GameOver({winner}) {
   return (
     <>
     <div id="game-over">
-    <p>{winner} won!</p>
-    <button>Restart Match</button>
+   { winner ? <p>{winner} won!</p> :
+   <p>It's a draw</p> }
+    <button >Restart Match</button>
     </div>
     </>
   )
