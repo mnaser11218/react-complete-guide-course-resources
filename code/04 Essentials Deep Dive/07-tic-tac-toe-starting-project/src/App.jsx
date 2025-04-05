@@ -1,8 +1,8 @@
 import Gameboard from "./components/Gameboard"
 import Log from "./components/Log"
 import Player from "./components/Player"
-import { useEffect, useState } from "react"
-import {deriveActivePlayer, deriveGameBoard,deriveWinner, PLAYERS, INITIAL_GAME_BOARD } from "./helperMethods"
+import { useState } from "react"
+import {deriveActivePlayer, deriveGameBoard,deriveWinner, PLAYERS } from "./utils/helperMethods"
 import GameOver from "./components/GameOver"
 
 function App() {
