@@ -20,17 +20,12 @@ const deriveActivePlayer = (gameTurns)=> {
 function App() {
   const [gameTurns, setGameTurns] = useState([])
   const activePlayer = deriveActivePlayer(gameTurns)
-  const [gameBoard, setGameBoard] = useState(initialBoard)
+  let gameBoard= [...initialBoard.map(board=>[...board])]
   let winner = null;
   let hasDraw = !winner && gameTurns.length === 9;
-  const restartBoard = ()=>{
-  // setGameBoard(initialBoard);
-  //  winner = undefined;
-   
-  //   console.log(winner)
-  }
+  const restartBoard = ()=> setGameTurns([])
 
-
+  
   for(const turn of gameTurns){
       const {square, player}= turn;
       const {row, col}=square;
