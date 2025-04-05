@@ -21,16 +21,16 @@ function App() {
   const [gameTurns, setGameTurns] = useState([])
   const activePlayer = deriveActivePlayer(gameTurns)
   const [players, setPlayers]= useState({
-    'X': 'Player One',
-    'O': 'Player Two'
+    X: 'Player One',
+    O: 'Player Two'
   })
   let gameBoard= [...initialBoard.map(board=>[...board])]
   let winner = null;
   let hasDraw = !winner && gameTurns.length === 9;
   const restartBoard = ()=>setGameTurns([])
 
-const handlePlayerNameChange = ()=>{
-  setPlayers(prevPlayers=> ({...prevPlayers, 'X': 'kk'}))
+const handlePlayerNameChange = (symbol, playerName)=>{
+  setPlayers(prevPlayers=> ({...prevPlayers, [symbol]: playerName}))
 }
   
 
@@ -47,7 +47,7 @@ const handlePlayerNameChange = ()=>{
     const secondSquareSymbol = gameBoard[combination[1].row][combination[1].column]
     const thirdSquareSymbol = gameBoard[combination[2].row][combination[2].column]
     if(firstSquareSymbol && firstSquareSymbol == secondSquareSymbol && firstSquareSymbol == thirdSquareSymbol){
-    winner=firstSquareSymbol;
+    winner= players[firstSquareSymbol];
     }
   }
   const handleSelectSquare = (rowIndex, colIndex)=>{

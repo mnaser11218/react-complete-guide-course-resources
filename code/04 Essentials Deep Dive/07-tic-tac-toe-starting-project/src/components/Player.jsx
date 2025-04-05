@@ -12,9 +12,8 @@ export default function Player({initialName, symbol, isActive, onNameChange}){
 
     const handleEditClick = ()=>{
         if(isEditing){
-            onNameChange(symbol, playerName)
+            onNameChange(symbol, player)
         }
-
         setIsEditing((editing)=> !editing)
     } 
 
