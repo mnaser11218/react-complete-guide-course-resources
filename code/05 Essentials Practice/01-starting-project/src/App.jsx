@@ -1,6 +1,30 @@
 import pic from "./assets/investment-calculator-logo.png"
+import InputGroups from "./components/InputGroups"
+
+
+
 
 function App() {
+
+  const handleAnnualInvestment = ()=>{
+    console.log("inside handle annual investment")
+  }
+  const handleInitialInvestment = ()=>{
+    console.log("inside handle initial investment")
+  }
+
+  const inputs = [
+    {
+  labelOne: "Initial Investment",
+  onUpdateInputOne: handleInitialInvestment,
+  labelTwo: "Annual Investment",
+  onUpdateInputTwo: handleAnnualInvestment
+  }, 
+  // {
+  // label: "Annual Investment",
+  // onUpdateInput: handleAnnualInvestment
+  // }]
+]
   return (
     <>
     <header id="header">
@@ -9,30 +33,13 @@ function App() {
     </header>
     <div id="user-input"> 
 
-    <div  className="input-group">
-
-
-      <div>
-      <label for="initial-investment">Initial Investment </label>
-    <input id="initial-investment"></input>
-   
-    </div>
-
-
-
-
-    <div>
-      <label for="initial-investment">Initial Investment  </label>
-    <input id="initial-investment"></input>
-  
-    </div>
-    </div>
+    {inputs.map(input=>(
+      <InputGroups labelOne={input.labelOne} onUpdateInputOne={input.onUpdateInputOne} secondLabel={input.labelTwo} onUpdateSecondInput={input.onUpdateInputTwo} /> 
+    ))}
 
    
 
-    <div className="input-group">
-
-
+    {/* <div className="input-group">
 
       <div>
     <label >Expected Return </label>
@@ -47,7 +54,7 @@ function App() {
     </div>
 
 
-    </div>
+    </div> */}
     </div>
 
  
