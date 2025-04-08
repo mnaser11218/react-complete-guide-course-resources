@@ -1,6 +1,7 @@
 import { useState } from "react"
 import pic from "./assets/investment-calculator-logo.png"
 import InputGroups from "./components/InputGroups"
+import Results from "./components/Results"
 
 
 
@@ -54,6 +55,15 @@ function App() {
 
     </div>
 
+    <div >
+      <Results 
+      
+      initialInvestment={initialInvestment}
+      annualInvestment={annualInvestment}
+      expectedReturn={expectedReturn}
+      duration={duration}
+      />
+    </div>
  
 
 
