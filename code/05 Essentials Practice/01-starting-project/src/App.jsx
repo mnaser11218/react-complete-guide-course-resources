@@ -1,6 +1,14 @@
+import pic from "./assets/investment-calculator-logo.png"
+
 function App() {
   return (
-    <h1>React Investment Calculator</h1>
+    <>
+    <header id="header">
+    <img src={pic}/> 
+    </header>
+
+    
+    </>
   )
 }
 
