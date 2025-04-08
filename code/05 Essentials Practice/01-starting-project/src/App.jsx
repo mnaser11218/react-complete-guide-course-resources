@@ -1,3 +1,4 @@
+import { useState } from "react"
 import pic from "./assets/investment-calculator-logo.png"
 import InputGroups from "./components/InputGroups"
 
@@ -5,25 +6,30 @@ import InputGroups from "./components/InputGroups"
 
 
 function App() {
+  const [initialInvestment, setInitialInvestment] = useState('0')
+  const [annualInvestment, setAnnualInvestment] = useState('0')
+  const handleAnnualInvestment = (updatedinvestment)=>setAnnualInvestment(updatedinvestment)
+  const handleInitialInvestment = (updatedinvestment)=> setInitialInvestment(updatedinvestment)
 
-  const handleAnnualInvestment = ()=>{
-    console.log("inside handle annual investment")
-  }
-  const handleInitialInvestment = ()=>{
-    console.log("inside handle initial investment")
-  }
+  
 
   const inputs = [
     {
   labelOne: "Initial Investment",
-  onUpdateInputOne: handleInitialInvestment,
+  firstInput: initialInvestment,
+  handleUpdateInputOne: handleInitialInvestment,
   labelTwo: "Annual Investment",
-  onUpdateInputTwo: handleAnnualInvestment
+  secondInput:annualInvestment,
+  handleUpdateInputTwo: handleAnnualInvestment
   }, 
-  // {
-  // label: "Annual Investment",
-  // onUpdateInput: handleAnnualInvestment
-  // }]
+  {
+    labelOne: "Expected Return",
+    firstInput: expectedReturn,
+    handleUpdateInputOne: handleExpectedReturn,
+    labelTwo: "Duration",
+    secondInput:duration,
+    handleUpdateInputTwo: handleDuration
+    }, 
 ]
   return (
     <>
@@ -33,28 +39,16 @@ function App() {
     </header>
     <div id="user-input"> 
 
-    {inputs.map(input=>(
-      <InputGroups labelOne={input.labelOne} onUpdateInputOne={input.onUpdateInputOne} secondLabel={input.labelTwo} onUpdateSecondInput={input.onUpdateInputTwo} /> 
+    {inputs.map((input, index)=>(
+      <InputGroups key={index} 
+      firstInput={input.firstInput} 
+      secondInput={input.secondInput} 
+      labelOne={input.labelOne} 
+      onUpdateInputOne={input.handleUpdateInputOne} 
+      secondLabel={input.labelTwo} 
+      onUpdateInputTwo={input.handleUpdateInputTwo} /> 
     ))}
 
-   
-
-    {/* <div className="input-group">
-
-      <div>
-    <label >Expected Return </label>
-    <input></input>
-   
-    </div>
-
-    <div>
-    <label >Duration </label>
-    <input></input>
-   
-    </div>
-
-
-    </div> */}
     </div>
 
  
