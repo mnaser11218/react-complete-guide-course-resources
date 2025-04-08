@@ -8,10 +8,13 @@ import InputGroups from "./components/InputGroups"
 function App() {
   const [initialInvestment, setInitialInvestment] = useState('0')
   const [annualInvestment, setAnnualInvestment] = useState('0')
+  const [expectedReturn, setExpectedReturn] = useState('0')
+  const [duration, setDuration] = useState('0')
+
   const handleAnnualInvestment = (updatedinvestment)=>setAnnualInvestment(updatedinvestment)
   const handleInitialInvestment = (updatedinvestment)=> setInitialInvestment(updatedinvestment)
-
-  
+  const handleExpectedReturnUpdate = (updatedReturn)=> setExpectedReturn(updatedReturn)
+  const handleDurationUpdate = (durationUpdate)=>setDuration(durationUpdate)
 
   const inputs = [
     {
@@ -25,10 +28,10 @@ function App() {
   {
     labelOne: "Expected Return",
     firstInput: expectedReturn,
-    handleUpdateInputOne: handleExpectedReturn,
+    handleUpdateInputOne: handleExpectedReturnUpdate,
     labelTwo: "Duration",
     secondInput:duration,
-    handleUpdateInputTwo: handleDuration
+    handleUpdateInputTwo: handleDurationUpdate
     }, 
 ]
   return (
