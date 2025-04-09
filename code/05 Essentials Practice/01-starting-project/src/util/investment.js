@@ -12,8 +12,10 @@ export function calculateInvestmentResults({
 }) {
   const annualData = [];
   let investmentValue = initialInvestment;
+  console.log("inside method duratuoin is: " + expectedReturn)
 
   for (let i = 0; i < duration; i++) {
+    console.log("inside method duration: " + annualData)
     const interestEarnedInYear = investmentValue * (expectedReturn / 100);
     investmentValue += interestEarnedInYear + annualInvestment;
     annualData.push({

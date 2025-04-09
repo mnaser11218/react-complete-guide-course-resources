@@ -7,10 +7,10 @@ import Results from "./components/Results"
 
 
 function App() {
-  const [initialInvestment, setInitialInvestment] = useState('0')
-  const [annualInvestment, setAnnualInvestment] = useState('0')
-  const [expectedReturn, setExpectedReturn] = useState('0')
-  const [duration, setDuration] = useState('0')
+  const [initialInvestment, setInitialInvestment] = useState(0)
+  const [annualInvestment, setAnnualInvestment] = useState(0)
+  const [expectedReturn, setExpectedReturn] = useState(0)
+  const [duration, setDuration] = useState(0)
 
   const handleAnnualInvestment = (updatedinvestment)=>setAnnualInvestment(updatedinvestment)
   const handleInitialInvestment = (updatedinvestment)=> setInitialInvestment(updatedinvestment)
@@ -57,7 +57,6 @@ function App() {
 
     <div >
       <Results 
-      
       initialInvestment={initialInvestment}
       annualInvestment={annualInvestment}
       expectedReturn={expectedReturn}

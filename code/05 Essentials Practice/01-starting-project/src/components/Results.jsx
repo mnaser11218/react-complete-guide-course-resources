@@ -1,11 +1,58 @@
 import React from 'react'
-
+import { calculateInvestmentResults } from '../util/investment'
+import { formatter } from '../util/investment'
 function Results({initialInvestment,
     annualInvestment,
     expectedReturn,
-    duration,}) {
+    duration}) {
+
+const finalResults = calculateInvestmentResults({initialInvestment,
+    annualInvestment,
+    expectedReturn,
+    duration})
   return (
-    <div id="result">Results</div>
+
+
+ 
+
+            
+            <table id="result">
+  <thead>
+    <tr>
+    <th>Year</th>
+    <th>Investment Value</th>
+    <th>Interest (Year)</th>
+    <th>Total interest</th>
+    <th>Interest Capital</th>
+    </tr>
+   
+  </thead>
+    <tbody>
+  {finalResults.map((results, index)=>(
+  <tr>
+    <td>{results.year}</td>
+    <td>{formatter.format(results.annualInvestment)}</td>
+
+    <td>{formatter.format(results.valueEndOfYear)}</td>
+    <td>{formatter.format(results.interest)}</td>
+    <td>{formatter.format(results.interest)}</td>
+   
+  </tr>
+
+))}
+</tbody>
+
+
+{/*     year: i + 1, // year identifier
+      interest: interestEarnedInYear, // the amount of interest earned in this year
+      valueEndOfYear: investmentValue, // investment value at end of year
+      annualInvestment: annualInvestment,  */}
+           
+     
+    
+     </table>
+        
+    
   )
 }
 
