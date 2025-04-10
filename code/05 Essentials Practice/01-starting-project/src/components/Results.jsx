@@ -11,12 +11,8 @@ const finalResults = calculateInvestmentResults({initialInvestment,
     expectedReturn,
     duration})
   return (
-
-
- 
-
-            
-            <table id="result">
+   
+ <table id="result">
   <thead>
     <tr>
     <th>Year</th>
@@ -41,15 +37,7 @@ const finalResults = calculateInvestmentResults({initialInvestment,
 
 ))}
 </tbody>
-
-
-{/*     year: i + 1, // year identifier
-      interest: interestEarnedInYear, // the amount of interest earned in this year
-      valueEndOfYear: investmentValue, // investment value at end of year
-      annualInvestment: annualInvestment,  */}
-           
-     
-    
+ 
      </table>
         
     
