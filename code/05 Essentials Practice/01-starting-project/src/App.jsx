@@ -3,20 +3,20 @@ import pic from "./assets/investment-calculator-logo.png"
 import InputGroups from "./components/InputGroups"
 import Results from "./components/Results"
 
-
-
-
 function App() {
+  // state for user inputs
   const [initialInvestment, setInitialInvestment] = useState(0)
   const [annualInvestment, setAnnualInvestment] = useState(0)
   const [expectedReturn, setExpectedReturn] = useState(0)
   const [duration, setDuration] = useState(0)
 
+  // methods to update state from onclick 
   const handleAnnualInvestment = (updatedinvestment)=>setAnnualInvestment(updatedinvestment)
   const handleInitialInvestment = (updatedinvestment)=> setInitialInvestment(updatedinvestment)
   const handleExpectedReturnUpdate = (updatedReturn)=> setExpectedReturn(updatedReturn)
   const handleDurationUpdate = (durationUpdate)=>setDuration(durationUpdate)
 
+  // mock data to pass down state to results component
   const inputs = [
     {
   labelOne: "Initial Investment",
@@ -34,6 +34,7 @@ function App() {
     secondInput:duration,
     handleUpdateInputTwo: handleDurationUpdate
     }, 
+  
 ]
   return (
     <>
@@ -42,7 +43,7 @@ function App() {
     <h1>Investment Calculator</h1>
     </header>
     <div id="user-input"> 
-
+    
     {inputs.map((input, index)=>(
       <InputGroups key={index} 
       firstInput={input.firstInput} 
@@ -63,13 +64,6 @@ function App() {
       duration={duration}
       />
     </div>
- 
-
-
-
-
-
-    
     </>
   )
 }
