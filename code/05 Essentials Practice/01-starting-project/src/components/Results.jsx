@@ -11,7 +11,6 @@ const finalResults = calculateInvestmentResults({initialInvestment,
     expectedReturn,
     duration})
   return (
-   
  <table id="result">
   <thead>
     <tr>
@@ -28,7 +27,6 @@ const finalResults = calculateInvestmentResults({initialInvestment,
   <tr>
     <td>{results.year}</td>
     <td>{formatter.format(results.annualInvestment)}</td>
-
     <td>{formatter.format(results.valueEndOfYear)}</td>
     <td>{formatter.format(results.interest)}</td>
     <td>{formatter.format(results.interest)}</td>
